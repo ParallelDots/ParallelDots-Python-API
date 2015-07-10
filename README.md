@@ -17,4 +17,8 @@ https://github.com/ParallelDots/ParallelDots-Python-API.git
 python setup.py install
 ```
 
+API Keys + Setup
+----------------
+Signup and get your free API key from [ParallelDots](http://www.paralleldots.com).
+
 

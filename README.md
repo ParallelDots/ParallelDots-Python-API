@@ -19,6 +19,32 @@ python setup.py install
 
 API Keys + Setup
 ----------------
-Signup and get your free API key from [ParallelDots](http://www.paralleldots.com).
+Signup and get your free API key from [ParallelDots](http://www.paralleldots.com/developers/signup).
 
+Supported APIs:
+------------
 
+- Semantic Proximity
+- Sentiment Analysis
+- Taxonomy
+- Entity Extraction
+
+Examples
+--------
+```python
+>>> from paralleldots import similarity, ner, taxonomy, sentiment
+
+>>> paralleldots.config.api_key = "YOUR_API_KEY"
+
+>>> similarity('Sachin is the greatest batsman', 'Tendulkar is the finest cricketer')
+{"actual": 0.79401779353226476, "similarity": 4.8781727384640341}
+
+>>> sentiment('Come on, lets play together')
+{"sentiment": 0.7375614089809589}
+
+>>> taxonomy('Narendra Modi is the prime minister of India')
+{"credits": "ParallelDots", "tags": [["finance", 1], ["business", 0], ["government", 0]]}
+
+>>> ner("Narendra Modi is the prime minister of India")
+{"entities": ["narendra modi", "india"]}
+```

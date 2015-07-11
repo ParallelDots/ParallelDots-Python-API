@@ -21,6 +21,19 @@ API Keys + Setup
 ----------------
 Signup and get your free API key from [ParallelDots](http://www.paralleldots.com/developers/signup).
 
+Configuration:
+```python
+>>> from paralleldots import config
+
+	#Setting your API key
+>>> config.set_api_key("YOUR API KEY")
+
+	#Viewing your API key
+>>> config.get_api_key()
+```
+
+
+
 Supported APIs:
 ------------
 
@@ -33,8 +46,6 @@ Examples
 --------
 ```python
 >>> from paralleldots import similarity, ner, taxonomy, sentiment
-
->>> paralleldots.config.api_key = "YOUR_API_KEY"
 
 >>> similarity('Sachin is the greatest batsman', 'Tendulkar is the finest cricketer')
 {"actual": 0.79401779353226476, "similarity": 4.8781727384640341}

@@ -7,7 +7,7 @@ def get_ner(s1):
 	if not apikey == None:
 		params = { 'sentence1' : s1, 'apikey' : apikey}
 		en_params = urllib.urlencode(params)
-		url = 'http://54.255.201.193:7777/ner?'+en_params
+		url = 'http://apis.paralleldots.com/ner?'+en_params
 		a =  urllib2.urlopen(url)
 		return json.load(a)
 	else:

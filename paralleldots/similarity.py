@@ -7,7 +7,7 @@ def get_similarity(s1,s2):
 	if not apikey == None:
 		params = { 'sentence1' : s1, 'sentence2' : s2, 'apikey' : apikey}
 		en_params = urllib.urlencode(params)
-		url = 'http://54.255.201.193:7777/semanticsimilarity?'+en_params
+		url = 'http://apis.paralleldots.com/semanticsimilarity?'+en_params
 		a =  urllib2.urlopen(url)
 		return json.load(a)
 	else:

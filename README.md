@@ -20,6 +20,7 @@ python setup.py install
 API Keys + Setup
 ----------------
 Signup and get your free API key from [ParallelDots](http://www.paralleldots.com/developers/signup).
+You will receive a mail containing the API key at the registered email id.
 
 Configuration:
 ```python

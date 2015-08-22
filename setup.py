@@ -22,11 +22,12 @@ setup(
     ],
     keywords='paralleldots sentiment taxonomy ner semantic similarity deeplearning',
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
-    install_requires=[],
-    # extras_require={
-    #     'dev': ['check-manifest'],
-    #     'test': ['coverage'],
-    # },
+    setup_requires=[
+        "urllib3 >= 1.11"
+    ],
+    install_requires=[
+        "urllib3 >= 1.11"
+    ],
     entry_points={
         'console_scripts': [
             'paralleldots=paralleldots:main',

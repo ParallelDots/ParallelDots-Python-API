@@ -4,7 +4,7 @@ from os import path
 
 setup(
     name='ParallelDots',
-    version='0.3',
+    version='0.4',
     description='Python Wrapper for ParallelDots API',
     url='https://github.com/ParallelDots/ParallelDots-Python-API.git',
     author='Ahwan Kumar',

@@ -1,6 +1,9 @@
 ParallelDots-Python-API
-===============
+=======================
 
+.. image:: https://badge.fury.io/py/paralleldots.png
+    :target: http://badge.fury.io/py/paralleldots
+    
 A wrapper for the [ParallelDots API](http://www.paralleldots.com).
 
 

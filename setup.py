@@ -9,7 +9,7 @@ def read(fname):
 
 setup(
     name='ParallelDots',
-    version='0.4.8',
+    version='0.4.9',
     description='Python Wrapper for ParallelDots API',
     long_description=read("README.rst"),
     url='https://github.com/ParallelDots/ParallelDots-Python-API.git',

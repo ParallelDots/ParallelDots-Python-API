@@ -2,10 +2,16 @@ from setuptools import setup, find_packages
 from codecs import open
 from os import path
 
+def read(fname):
+    with open(fname) as fp:
+        content = fp.read()
+    return content
+
 setup(
     name='ParallelDots',
-    version='0.4',
+    version='0.4.8',
     description='Python Wrapper for ParallelDots API',
+    long_description=read("README.rst"),
     url='https://github.com/ParallelDots/ParallelDots-Python-API.git',
     author='Ahwan Kumar',
     author_email='ahwan@paralleldots.com',

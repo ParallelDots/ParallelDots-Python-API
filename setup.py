@@ -2,41 +2,54 @@ from setuptools import setup, find_packages
 from codecs import open
 from os import path
 
-def read(fname):
+def read( fname ):
     with open(fname) as fp:
         content = fp.read()
     return content
 
 setup(
-    name='ParallelDots',
-    version='0.4.9',
-    description='Python Wrapper for ParallelDots API',
+    name="ParallelDots",
+    version="0.6.0",
+    description="Python Wrapper for ParallelDots APIs",
     long_description=read("README.rst"),
-    url='https://github.com/ParallelDots/ParallelDots-Python-API.git',
-    author='Ahwan Kumar',
-    author_email='ahwan@paralleldots.com',
-    license='MIT',
+    url="https://github.com/ParallelDots/ParallelDots-Python-API.git",
+    author="Ahwan Kumar,Meghdeep Ray",
+    author_email="ahwan@paralleldots.com,meghdeepr@paralleldots.com",
+    license="MIT",
     classifiers=[
-        'Development Status :: 4 - Beta',
-        'Intended Audience :: Developers',
-        'Topic :: Software Development :: Build Tools',
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "Topic :: Software Development :: Build Tools",
 
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
+        "License :: OSI Approved :: MIT License",
+
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 2.6",
+        "Programming Language :: Python :: 2.7",
+
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.0",
+        "Programming Language :: Python :: 3.1",
+        "Programming Language :: Python :: 3.2",
+        "Programming Language :: Python :: 3.3",
+        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
+
+        "Topic :: Software Development :: Libraries",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+
     ],
-    keywords='paralleldots sentiment taxonomy ner semantic similarity deeplearning',
-    packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
+    keywords="paralleldots sentiment taxonomy ner semantic similarity deeplearning",
+    packages=find_packages(exclude=["contrib", "docs", "tests*"]),
     setup_requires=[
-        "urllib3 >= 1.11"
+        "requests"
     ],
     install_requires=[
-        "urllib3 >= 1.11"
+        "requests"
     ],
     entry_points={
-        'console_scripts': [
-            'paralleldots=paralleldots:main',
+        "console_scripts": [
+            "paralleldots=paralleldots:main",
         ],
     },
 )

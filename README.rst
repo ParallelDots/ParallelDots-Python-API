@@ -60,16 +60,16 @@ Examples
 	>>> from paralleldots import similarity, ner, taxonomy, sentiment, keywords
 
 	>>> similarity( "Sachin is the greatest batsman", "Tendulkar is the finest cricketer" )
-	{"actual": 0.79401779353226476, "similarity": 4.8781727384640341}
+	{"actual_score": 0.8429316099720955, "normalized_score": 4.931468684177398, "similarity": 4.931468684177398}
 
 	>>> sentiment( "Come on, lets play together" )
-	{"sentiment": 0.7375614089809589}
+	{"sentiment": 0.8513014912605286}
 
 	>>> taxonomy( "Narendra Modi is the prime minister of India" )
-	{"credits": "ParallelDots", "tags": [["finance", 1], ["business", 0], ["government", 0]]}
+	{"tags": [[u"finance", 4.088], [u"government", 3.4284], [u"business", 1.2719]]}
 
 	>>> ner( "Narendra Modi is the prime minister of India" )
-	{"entities": ["narendra modi", "india"]}
+	{"entities": [[u"Modi", 1.0, [u"person"], u""], [u"India", 1.0, [u"org"], u""], [u"Narendra", 1.0, [u"org"], u""]]}
 
 	>>> keywords( "Prime Minister Narendra Modi tweeted a link to the speech Human Resource Development Minister Smriti Irani made in the Lok Sabha during the debate on the ongoing JNU row and the suicide of Dalit scholar Rohith Vemula at the Hyderabad Central University." )
-	{'keywords': [[u'Human Resource Development Minister Smriti Irani', 6], [u'Prime Minister Narendra Modi', 4], [u'Hyderabad Central University', 3], [u'ongoing JNU row', 3], [u'Dalit scholar', 2], [u'Lok Sabha', 2], [u'Rohith Vemula', 2]]}
+	{"keywords": [[u"Human Resource Development Minister Smriti Irani", 6], [u"Prime Minister Narendra Modi", 4], [u"Hyderabad Central University", 3], [u"ongoing JNU row", 3], [u"Dalit scholar", 2], [u"Lok Sabha", 2], [u"Rohith Vemula", 2]]}

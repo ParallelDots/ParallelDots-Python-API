@@ -10,7 +10,7 @@ def get_sentiment( sentence1 ):
 		elif sentence1 == "":
 			return "Input string cannot be empty."
 		url = "http://apis.paralleldots.com/sentiment"
-		r =  requests.post( url, data=json.dumps( { "apikey": apikey, "sentence1": sentence1 } ) )
+		r =  requests.get( url, params={ "apikey": apikey, "sentence1": sentence1 } )
 		if r.status_code != 200:
 			return "Oops something went wrong ! You can raise an issue at https://github.com/ParallelDots/ParallelDots-Python-API/issues."
 		r = json.loads( r.text )

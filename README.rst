@@ -33,31 +33,36 @@ Configuration:
 
 .. code:: python
 
-	>>> from paralleldots import config
+	>>> from paralleldots import set_api_key, get_api_key
 
 	# Setting your API key
-	>>> config.set_api_key("YOUR API KEY")
+	>>> set_api_key("YOUR API KEY")
 
 	# Viewing your API key
-	>>> config.get_api_key()
+	>>> get_api_key()
 
 
 
 Supported APIs:
 ---------------
 
-- Semantic Proximity
-- Sentiment Analysis
+- `Semantic Similarity <http://blog.paralleldots.com/technology/semantic-publishing-media-industry/>`
+- `Sentiment Analysis <http://blog.paralleldots.com/technology/extract-the-context-sentiment-analysis-and-opinion-mining/>`
 - Taxonomy
-- Entity Extraction
-- Keywords
+- `Named Entity Extraction ( NER ) <http://blog.paralleldots.com/technology/dig-relevant-text-elements-entity-extraction-api/>`
+- `Keywords <http://blog.paralleldots.com/technology/extract-weighty-words-keyword-extraction-api/>`
+- `Intent <http://blog.paralleldots.com/text-analytics/common-use-cases-intent-analysis/>`
+- Emotion
+- Multiple Language Sentiment
+	- Portuguese ( pt )
+	- French ( fr )
 
 Examples
 --------
 
 .. code:: python
 
-	>>> from paralleldots import similarity, ner, taxonomy, sentiment, keywords
+	>>> from paralleldots import similarity, ner, taxonomy, sentiment, keywords, intent, emotion, multilang_sentiment
 
 	>>> similarity( "Sachin is the greatest batsman", "Tendulkar is the finest cricketer" )
 	{"actual_score": 0.8429316099720955, "normalized_score": 4.931468684177398, "similarity": 4.931468684177398}
@@ -73,3 +78,12 @@ Examples
 
 	>>> keywords( "Prime Minister Narendra Modi tweeted a link to the speech Human Resource Development Minister Smriti Irani made in the Lok Sabha during the debate on the ongoing JNU row and the suicide of Dalit scholar Rohith Vemula at the Hyderabad Central University." )
 	{"keywords": [[u"Human Resource Development Minister Smriti Irani", 6], [u"Prime Minister Narendra Modi", 4], [u"Hyderabad Central University", 3], [u"ongoing JNU row", 3], [u"Dalit scholar", 2], [u"Lok Sabha", 2], [u"Rohith Vemula", 2]]}
+
+	>>> emotion("Did you hear the latest Porcupine Tree song ? It's rocking !")
+	{"emotion": "happy"}
+
+	>>> intent("Finance ministry calls banks to discuss new facility to drain cash")
+	{"intent": "news"}
+
+	>>> multilang_sentiment("La ville de Paris est très belle", "fr")
+	{"sentiment": "positive", "confidence_score": 0.998047}

@@ -46,12 +46,12 @@ Configuration:
 Supported APIs:
 ---------------
 
-- [Semantic Similarity] (http://blog.paralleldots.com/technology/semantic-publishing-media-industry/)
-- [Sentiment Analysis] (http://blog.paralleldots.com/technology/extract-the-context-sentiment-analysis-and-opinion-mining/)
+- Semantic Similarity - https://tinyurl.com/k23nqs9
+- Sentiment Analysis - https://tinyurl.com/km99mzb
 - Taxonomy
-- [Named Entity Extraction ( NER ) ](http://blog.paralleldots.com/technology/dig-relevant-text-elements-entity-extraction-api/)
-- [Keywords] (http://blog.paralleldots.com/technology/extract-weighty-words-keyword-extraction-api/)
-- [Intent] (http://blog.paralleldots.com/text-analytics/common-use-cases-intent-analysis/)
+- Named Entity Extraction ( NER ) - https://tinyurl.com/k9yglwc
+- Keywords - https://tinyurl.com/kujcu8o
+- Intent - https://tinyurl.com/n568bqw
 - Emotion
 - Multiple Language Sentiment
 	- Portuguese ( pt )

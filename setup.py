@@ -9,9 +9,9 @@ def read( fname ):
 
 setup(
     name="ParallelDots",
-    version="0.9.0",
+    version="0.9.1",
     description="Python Wrapper for ParallelDots APIs",
-    long_description=read("README.md"),
+    long_description=read("DESCRIPTION.rst"),
     url="https://github.com/ParallelDots/ParallelDots-Python-API.git",
     author="Ahwan Kumar,Meghdeep Ray",
     author_email="ahwan@paralleldots.com,meghdeepr@paralleldots.com",
@@ -39,8 +39,9 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
 
     ],
-    keywords="paralleldots sentiment taxonomy ner semantic similarity deeplearning",
+    keywords="paralleldots sentiment taxonomy ner semantic similarity deeplearning intent emotion abuse",
     packages=find_packages(exclude=["contrib", "docs", "tests*"]),
+    package_data={ "README.md", "DESCRIPTION.rst" }
     setup_requires=[
         "requests"
     ],

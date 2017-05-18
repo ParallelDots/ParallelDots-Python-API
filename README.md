@@ -85,3 +85,6 @@ Examples
 
 	>>> multilang_sentiment("La ville de Paris est très belle", "fr")
 	{"sentiment": "positive", "confidence_score": 0.998047}
+
+	>>> abuse("you f**king a$$hole")
+    {"confidence_score": 0.998047, "sentence_type": "Abusive"}

@@ -41,7 +41,6 @@ setup(
     ],
     keywords="paralleldots sentiment taxonomy ner semantic similarity deeplearning intent emotion abuse",
     packages=find_packages(exclude=["contrib", "docs", "tests*"]),
-    package_data={ "README.md", "DESCRIPTION.rst" }
     setup_requires=[
         "requests"
     ],

@@ -38,18 +38,6 @@ Configuration:
     # Viewing your API key
     >>> get_api_key()
 
-Usage:
-
-::
-
-    >>> from paralleldots import hit_count, specific_hit_count
-
-    # View the number of API hits made and hits remaining
-    >>> hit_count()
-
-    # View the number of hits made for a specific API by using function name as a String
-    >>> specific_hit_count( "multilang_sentiment" )
-
 Supported APIs:
 ---------------
 

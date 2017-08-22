@@ -2,15 +2,15 @@ from paralleldots.config import get_api_key
 import requests
 import json
 
-def get_ner( text ):
+def get_multilang( text, lang_code ):
 	api_key  = get_api_key()
 	if not api_key == None:
 		if type( text ) != str:
 			return { "Error": "Input must be a string." }
 		elif text in [ "", None ]:
 			return { "Error": "Input string cannot be empty." }
-		url = "http://35.202.76.177/ner"
-		r =  requests.post( url, params={ "api_key": api_key, "text": text } )
+		url = "http://35.202.76.177/multilang"
+		r =  requests.post( url, params={ "api_key": api_key, "text": text, "lang_code": lang_code } )
 		if r.status_code != 200:
 			return { "Error": "Oops something went wrong ! You can raise an issue at https://github.com/ParallelDots/ParallelDots-Python-API/issues." }
 		r = json.loads( r.text )

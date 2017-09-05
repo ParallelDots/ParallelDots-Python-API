@@ -9,7 +9,7 @@ def get_abuse( text ):
 			return "Input must be a string." 
 		elif text in [ "", None ]:
 			return "Input string cannot be empty."
-		url = "http://35.202.76.177/v2/abuse"
+		url = "http://apis.paralleldots.com/v2/abuse"
 		r =  requests.post( url, params={ "api_key": api_key, "text": text } )
 		if r.status_code != 200:
 			return "Oops something went wrong ! You can raise an issue at https://github.com/ParallelDots/ParallelDots-Python-API/issues."

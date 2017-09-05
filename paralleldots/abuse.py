@@ -3,7 +3,7 @@ import requests
 import json
 
 def get_abuse( text ):
-	apikey  = get_api_key()
+	api_key  = get_api_key()
 	if not apikey == None:
 		if type( text ) != str:
 			return "Input must be a string." 

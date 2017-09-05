@@ -4,7 +4,7 @@ import json
 
 def get_abuse( text ):
 	api_key  = get_api_key()
-	if not apikey == None:
+	if not api_key == None:
 		if type( text ) != str:
 			return "Input must be a string." 
 		elif text in [ "", None ]:

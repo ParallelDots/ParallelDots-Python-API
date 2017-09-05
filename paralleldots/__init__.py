@@ -8,6 +8,7 @@ from paralleldots.keywords            import get_keywords            as keywords
 from paralleldots.emotion             import get_emotion             as emotion
 from paralleldots.intent              import get_intent              as intent
 from paralleldots.multilang           import get_multilang           as multilang
+from paralleldots.abuse               import get_abuse               as abuse
 
 from paralleldots.usage               import get_usage
 

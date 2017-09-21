@@ -61,7 +61,7 @@ Examples
 
 ::
 
-    >>> from paralleldots import similarity, ner, taxonomy, sentiment, keywords, intent, emotion, multilang_sentiment, abuse
+    >>> from paralleldots import similarity, ner, taxonomy, sentiment, keywords, intent, emotion, multilang, abuse
 
     >>> similarity( "Sachin is the greatest batsman", "Tendulkar is the finest cricketer" )
     {"actual_score": 0.8429316099720955, "normalized_score": 4.931468684177398, "similarity": 4.931468684177398}
@@ -84,7 +84,7 @@ Examples
     >>> intent("Finance ministry calls banks to discuss new facility to drain cash")
     {"intent": "news"}
 
-    >>> multilang_sentiment("La ville de Paris est très belle", "fr")
+    >>> multilang("La ville de Paris est très belle", "fr")
     {"sentiment": "positive", "confidence_score": 0.998047}
 
     >>> abuse("you f**king a$$hole")

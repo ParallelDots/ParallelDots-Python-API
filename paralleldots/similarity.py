@@ -2,7 +2,7 @@ from paralleldots.config import get_api_key
 import requests
 import json
 
-def get_similarity( text ):
+def get_similarity( text_1, text_2 ):
 	api_key  = get_api_key()
 	if not api_key == None:
 		if type( text_1 ) != str or type( text_2 ) != str:

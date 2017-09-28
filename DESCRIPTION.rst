@@ -76,17 +76,17 @@ Examples
 
     >>> ner( "Narendra Modi is the prime minister of India" )
     {"entities": [
-    {
-      "category": "name",
-      "name": "Narendra Modi",
-      "confidence_score": 0.951439
-    },
-    {
-      "category": "place",
-      "name": "India",
-      "confidence_score": 0.9263
-    }
-  ]}
+        {
+            "category": "name",
+            "name": "Narendra Modi",
+            "confidence_score": 0.951439
+        },
+        {
+            "category": "place",
+            "name": "India",
+            "confidence_score": 0.9263
+        }
+    ]}
 
     >>> keywords( "Prime Minister Narendra Modi tweeted a link to the speech Human Resource Development Minister Smriti Irani made in the Lok Sabha during the debate on the ongoing JNU row and the suicide of Dalit scholar Rohith Vemula at the Hyderabad Central University." )
     [{"relevance_score": 4, "keyword": "Prime Minister Narendra Modi"}, {"relevance_score": 1, "keyword": "link"}, {"relevance_score": 3, "keyword": "speech Human Resource"}, {"relevance_score": 1, "keyword": "Smriti"}, {"relevance_score": 1, "keyword": "Lok"}]

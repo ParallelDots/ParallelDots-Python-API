@@ -50,7 +50,7 @@ Supported APIs:
 -  `Intent <https://tinyurl.com/n568bqw>`__
 -  `Emotion <http://blog.paralleldots.com/technology/deep-learning/emotion-detection-using-machine-learning/>`__
 -  Abuse
--  Multiple Language Sentiment
+-  Multiple Language Sentiment ( The function encodes the input text )
 
    -  Portuguese ( pt )
    -  Chinese ( cn )
@@ -96,7 +96,7 @@ Examples
     >>> intent("Finance ministry calls banks to discuss new facility to drain cash")
     {"probabilities": {"news": 0.946028, "other": 0.015853, "query": 0.000412, "feedback/opinion": 0.014115, "spam": 0.023591}}
 
-    >>> multilang("Me encanta jugar al baloncesto", "es")
+    >>> multilang("Me encanta jugar al baloncesto", "es")   # The text is encoded in the function
     {"sentiment": "positive", "confidence_score": 1.0}
 
     >>> abuse("you f**king a$$hole")

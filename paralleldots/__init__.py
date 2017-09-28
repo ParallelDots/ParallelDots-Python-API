@@ -11,7 +11,7 @@ from paralleldots.intent              import get_intent              as intent
 from paralleldots.multilang           import get_multilang           as multilang
 from paralleldots.abuse               import get_abuse               as abuse
 
-from paralleldots.usage               import get_usage
+from paralleldots.usage               import get_usage               as usage
 
 from paralleldots.config              import set_api_key
 from paralleldots.config              import get_api_key

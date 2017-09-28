@@ -1,8 +1,10 @@
 from paralleldots.config import get_api_key
 import requests
+import urllib
 import json
 
 def get_multilang( text, lang_code ):
+	text     = urllib.quote( text )
 	api_key  = get_api_key()
 	if not api_key == None:
 		if type( text ) != str:

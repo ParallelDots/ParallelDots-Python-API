@@ -58,7 +58,7 @@ Examples
 	{"actual_score": 0.842932,"normalized_score": 4.931469}
 
 	>>> sentiment( "Come on, lets play together" )
-	{"probabilities": {"positive": 0.00002,"neutral": 0.999954,"negative": 0.000026}, u'sentiment': u'positive'}
+	{"probabilities": {"positive": 0.568817, "neutral": 0.400776, "negative": 0.030407}, "sentiment": "positive"}
 
 	>>> taxonomy( "Narendra Modi is the prime minister of India" )
 	{"tag": "terrorism", "confidence_score": 0.531435}, {"tag": "world politics", "confidence_score": 0.391963}, {"tag": "politics", "confidence_score": 0.358955}, {"tag": "religion", "confidence_score": 0.308195}, {"tag": "defense", "confidence_score": 0.26187}, {"tag": "business", "confidence_score": 0.20885}, {"tag": "entrepreneurship", "confidence_score": 0.18349}, {"tag": "health", "confidence_score": 0.171121}, {"tag": "technology", "confidence_score": 0.168591}, {"tag": "law", "confidence_score": 0.156953}, {"tag": "education", "confidence_score": 0.146511}, {"tag": "science", "confidence_score": 0.101002}, {"tag": "crime", "confidence_score": 0.085016}, {"tag": "entertainment", "confidence_score": 0.080634}, {"tag": "environment", "confidence_score": 0.078024}, {"tag": "disaster", "confidence_score": 0.075295}, {"tag": "weather", "confidence_score": 0.06784}, {"tag": "accident", "confidence_score": 0.066831}, {"tag": "sports", "confidence_score": 0.058329}, {"tag": "advertising", "confidence_score": 0.054868}, {"tag": "history", "confidence_score": 0.043581}, {"tag": "mining", "confidence_score": 0.03833}, {"tag": "travel", "confidence_score": 0.025517}, {"tag": "geography", "confidence_score": 0.022372}, {"tag": "nature", "confidence_score": 0.013477}, {"tag": "lifestyle", "confidence_score": 0.006467}, {"tag": "automobile", "confidence_score": 0.001161}, {"tag": "personal care", "confidence_score": 0.000275}]}
@@ -80,7 +80,7 @@ Examples
 	>>> keywords( "Prime Minister Narendra Modi tweeted a link to the speech Human Resource Development Minister Smriti Irani made in the Lok Sabha during the debate on the ongoing JNU row and the suicide of Dalit scholar Rohith Vemula at the Hyderabad Central University." )
 	[{"relevance_score": 4, "keyword": "Prime Minister Narendra Modi"}, {"relevance_score": 1, "keyword": "link"}, {"relevance_score": 3, "keyword": "speech Human Resource"}, {"relevance_score": 1, "keyword": "Smriti"}, {"relevance_score": 1, "keyword": "Lok"}]
 
-	>>> emotion("Did you hear the latest Porcupine Tree song ? It's rocking !")
+	>>> emotion("Did you hear the latest Porcupine Tree song ? It"s rocking !")
 	{"emotion": "other", "probabilities": {"angry": 0.010629, "other": 0.453988, "sad": 0.028748, "excited": 0.2596, "happy": 0.247035}
 	>>> intent("Finance ministry calls banks to discuss new facility to drain cash")
 	{"probabilities": {"news": 0.946028, "other": 0.015853, "query": 0.000412, "feedback/opinion": 0.014115, "spam": 0.023591}}

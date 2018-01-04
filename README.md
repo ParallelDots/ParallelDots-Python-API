@@ -3,7 +3,8 @@ ParallelDots-Python-API
 
 A wrapper for the [ParallelDots API](http://www.paralleldots.com).
 
-	
+Build Status: [![CircleCI](https://circleci.com/gh/ParallelDots/ParallelDots-Python-API.svg?style=svg)](https://circleci.com/gh/ParallelDots/ParallelDots-Python-API)
+
 Installation
 ------------
 From PyPI:

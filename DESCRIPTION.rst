@@ -53,7 +53,8 @@ Supported APIs:
 	- Portuguese ( pt )
 	- Chinese ( cn )
 	- Spanish ( sp )
-- Sentiment social
+- Sentiment Social
+- Custom Classifier
 - Usage
 
 Examples
@@ -102,6 +103,9 @@ Examples
 
 	>>> sentiment_social("I left my camera at home")
 	{"probabilities": {"positive": 0.040374, "neutral": 0.491032, "negative": 0.468594}}
+
+	>>> custom_classifier( TEXT, ID )
+	{ "taxonomy": [ { "tag": tag1, "confidence_score": score1 }, { "tag": tag2, "confidence_score": score2 }, ... ] }
 
 	>>> usage()
 	{

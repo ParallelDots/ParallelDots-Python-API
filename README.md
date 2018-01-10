@@ -48,12 +48,13 @@ Supported APIs:
 	- Chinese ( cn )
 	- Spanish ( sp )
 - Sentiment Social
+- Custom Classifier
 - Usage
 
 Examples
 --------
 
-	>>> from paralleldots import similarity, ner, taxonomy, sentiment, keywords, intent, emotion, multilang, abuse, sentiment_social
+	>>> from paralleldots import similarity, ner, taxonomy, sentiment, keywords, intent, emotion, multilang, abuse, sentiment_social, custom_classifier
 
 	>>> similarity( "Sachin is the greatest batsman", "Tendulkar is the finest cricketer" )
 	{"actual_score": 0.842932,"normalized_score": 4.931469}
@@ -81,7 +82,7 @@ Examples
 	>>> keywords( "Prime Minister Narendra Modi tweeted a link to the speech Human Resource Development Minister Smriti Irani made in the Lok Sabha during the debate on the ongoing JNU row and the suicide of Dalit scholar Rohith Vemula at the Hyderabad Central University." )
 	[{"relevance_score": 4, "keyword": "Prime Minister Narendra Modi"}, {"relevance_score": 1, "keyword": "link"}, {"relevance_score": 3, "keyword": "speech Human Resource"}, {"relevance_score": 1, "keyword": "Smriti"}, {"relevance_score": 1, "keyword": "Lok"}]
 
-	>>> emotion("Did you hear the latest Porcupine Tree song ? It"s rocking !")
+	>>> emotion("Did you hear the latest Porcupine Tree song ? It\'s rocking !")
 	{"emotion": "other", "probabilities": {"angry": 0.010629, "other": 0.453988, "sad": 0.028748, "excited": 0.2596, "happy": 0.247035}
 	>>> intent("Finance ministry calls banks to discuss new facility to drain cash")
 	{"probabilities": {"news": 0.946028, "other": 0.015853, "query": 0.000412, "feedback/opinion": 0.014115, "spam": 0.023591}}
@@ -94,6 +95,9 @@ Examples
 
 	>>> sentiment_social("I left my camera at home")
 	{"probabilities": {"positive": 0.040374, "neutral": 0.491032, "negative": 0.468594}}
+
+	>>> custom_classifier( TEXT, ID )
+	{ "taxonomy": [ { "tag": tag1, "confidence_score": score1 }, { "tag": tag2, "confidence_score": score2 }, ... ] }
 
 	>>> usage()
 	{

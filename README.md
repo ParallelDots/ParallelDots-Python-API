@@ -95,7 +95,7 @@ Examples
 
 	>>> sentiment_social("I left my camera at home")
 	{"probabilities": {"positive": 0.040374, "neutral": 0.491032, "negative": 0.468594}}
-        #GET you custom classifier id by loggin to your [dashboard](https://user.apis.paralleldots.com/login) and publishing your categories.
+	
 	>>> custom_classifier( TEXT, ID )
 	{ "taxonomy": [ { "tag": tag1, "confidence_score": score1 }, { "tag": tag2, "confidence_score": score2 }, ... ] }
 

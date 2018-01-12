@@ -19,8 +19,8 @@ From Source:
 
 API Keys & Setup
 ----------------
-Signup and get your free API key from [ParallelDots](http://www.paralleldots.com/pricing).
-You will receive a mail containing the API key at the registered email id.
+Sign up to create your free account from [ParallelDots](https://www.paralleldots.com/sign-up).
+[Log in](https://user.apis.paralleldots.com/login) to your account to get your API key.
 
 Configuration:
 
@@ -37,18 +37,18 @@ Supported APIs:
 
 - [Semantic Similarity](https://tinyurl.com/k23nqs9)
 - [Sentiment Analysis](https://tinyurl.com/km99mzb)
-- Taxonomy
+- [Taxonomy](https://www.paralleldots.com/text-classification)
 - [Named Entity Extraction/Recognition ( NER )](https://tinyurl.com/k9yglwc)
 - [Keywords](https://tinyurl.com/kujcu8o)
 - [Intent](https://tinyurl.com/n568bqw)
 - [Emotion](http://blog.paralleldots.com/technology/deep-learning/emotion-detection-using-machine-learning/)
-- Abuse
-- Multiple Language Sentiment ( The function encodes the input text )
+- [Abuse](https://www.paralleldots.com/text-analysis-apis#abusive)
+- [Multilingual Sentiment Analysis](https://www.paralleldots.com/multilingual-sentiment-analysis) ( The function encodes the input text )
 	- Portuguese ( pt )
 	- Chinese ( cn )
 	- Spanish ( sp )
-- Sentiment Social
-- Custom Classifier
+- [Sentiment Social](https://www.paralleldots.com/text-analysis-apis#sentiment)
+- [Custom Classifier](https://www.paralleldots.com/custom-classifier)
 - Usage
 
 Examples
@@ -95,7 +95,7 @@ Examples
 
 	>>> sentiment_social("I left my camera at home")
 	{"probabilities": {"positive": 0.040374, "neutral": 0.491032, "negative": 0.468594}}
-
+	
 	>>> custom_classifier( TEXT, ID )
 	Get your custom classifier id by loggin to your [dashboard](https://user.apis.paralleldots.com/login) and publishing your categories.
 	{ "taxonomy": [ { "tag": tag1, "confidence_score": score1 }, { "tag": tag2, "confidence_score": score2 }, ... ] }

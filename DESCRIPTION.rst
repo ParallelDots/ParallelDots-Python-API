@@ -105,6 +105,7 @@ Examples
 	{"probabilities": {"positive": 0.040374, "neutral": 0.491032, "negative": 0.468594}}
 
 	>>> custom_classifier( TEXT, ID )
+	Get your custom classifier id by loggin to your [dashboard](https://user.apis.paralleldots.com/login) and publishing your categories.
 	{ "taxonomy": [ { "tag": tag1, "confidence_score": score1 }, { "tag": tag2, "confidence_score": score2 }, ... ] }
 
 	>>> usage()

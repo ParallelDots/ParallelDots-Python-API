@@ -37,13 +37,13 @@ Supported APIs:
 
 - [Semantic Similarity](https://tinyurl.com/k23nqs9)
 - [Sentiment Analysis](https://tinyurl.com/km99mzb)
-- Taxonomy
+- [Taxonomy](https://www.paralleldots.com/text-classification)
 - [Named Entity Extraction/Recognition ( NER )](https://tinyurl.com/k9yglwc)
 - [Keywords](https://tinyurl.com/kujcu8o)
 - [Intent](https://tinyurl.com/n568bqw)
 - [Emotion](http://blog.paralleldots.com/technology/deep-learning/emotion-detection-using-machine-learning/)
 - [Abuse](https://www.paralleldots.com/text-analysis-apis#abusive)
-- Multiple Language Sentiment ( The function encodes the input text )
+- [Multilingual Sentiment Analysis](https://www.paralleldots.com/multilingual-sentiment-analysis) ( The function encodes the input text )
 	- Portuguese ( pt )
 	- Chinese ( cn )
 	- Spanish ( sp )

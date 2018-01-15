@@ -1,3 +1,4 @@
+from paralleldots import set_api_key, get_api_key
 from paralleldots import similarity, ner, taxonomy, sentiment, keywords, intent, emotion, multilang, abuse, sentiment_social
 
 

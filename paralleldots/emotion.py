@@ -2,7 +2,7 @@ from paralleldots.config import get_api_key
 import requests
 import json
 
-def get_emotion( text ):
+def get_emotion( text, lang_code= "en" ):
 	api_key  = get_api_key()
 	if not api_key == None:
 		if type( text ) != str:
@@ -10,7 +10,7 @@ def get_emotion( text ):
 		elif text in [ "", None ]:
 			return { "Error": "Input string cannot be empty." }
 		url = "http://apis.paralleldots.com/v2/emotion"
-		r =  requests.post( url, params={ "api_key": api_key, "text": text } )
+		r =  requests.post( url, params= { "api_key": api_key, "text": text, "lang_code": lang_code } )
 		if r.status_code != 200:
 			return { "Error": "Oops something went wrong ! You can raise an issue at https://github.com/ParallelDots/ParallelDots-Python-API/issues." }
 		r = json.loads( r.text )

@@ -9,7 +9,7 @@ def read( fname ):
 
 setup(
     name="ParallelDots",
-    version="1.1.0",
+    version="3.0.0",
     description="Python Wrapper for ParallelDots APIs",
     long_description=read("DESCRIPTION.rst"),
     url="https://github.com/ParallelDots/ParallelDots-Python-API.git",
@@ -39,8 +39,8 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
 
     ],
-    keywords="paralleldots sentiment taxonomy ner semantic similarity deeplearning intent emotion abuse",
-    packages=find_packages(exclude=["contrib", "docs", "tests*"]),
+    keywords="paralleldots sentiment taxonomy ner semantic similarity deeplearning intent emotion abuse nsfw image visual api phrase text parser popularity",
+    packages=find_packages( exclude= [ "contrib", "docs", "tests*" ] ),
     setup_requires=[
         "requests"
     ],

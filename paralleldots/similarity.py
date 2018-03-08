@@ -9,8 +9,8 @@ def get_similarity( text_1, text_2 ):
 			return { "Error": "Input must be a string." }
 		elif text_1 == "" or text_2 == "":
 			return { "Error": "Input string cannot be empty." }
-		url = "http://apis.paralleldots.com/v2/similarity"
-		r =  requests.post( url, params={ "api_key": api_key, "text_1": text_1, "text_2": text_2 } )
+		url = "http://apis.paralleldots.com/v3/similarity"
+		r =  requests.post( url, params= { "api_key": api_key, "text_1": text_1, "text_2": text_2 } )
 		if r.status_code != 200:
 			return { "Error": "Oops something went wrong ! You can raise an issue at https://github.com/ParallelDots/ParallelDots-Python-API/issues." }
 		r = json.loads( r.text )

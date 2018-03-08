@@ -1,7 +1,7 @@
 ParallelDots-Python-API
 =======================
 
-A wrapper for the [ParallelDots API](http://www.paralleldots.com).
+A wrapper for the [ParallelDots APIs](http://www.paralleldots.com).
 
 Build Status: [![CircleCI](https://circleci.com/gh/ParallelDots/ParallelDots-Python-API.svg?style=svg)](https://circleci.com/gh/ParallelDots/ParallelDots-Python-API)
 
@@ -24,102 +24,111 @@ Sign up to create your free account from [ParallelDots](https://www.paralleldots
 
 Configuration:
 
-	>>> from paralleldots import set_api_key, get_api_key
+	>>> import paralleldots
 
 	# Setting your API key
-	>>> set_api_key("YOUR API KEY")
+	>>> paralleldots.set_api_key( "YOUR API KEY" )
 
 	# Viewing your API key
-	>>> get_api_key()
+	>>> paralleldots.get_api_key()
 
 Supported APIs:
 ---------------
 
-- [Semantic Similarity](https://tinyurl.com/k23nqs9)
-- [Sentiment Analysis](https://tinyurl.com/km99mzb)
-- [Taxonomy](https://www.paralleldots.com/text-classification)
-- [Named Entity Extraction/Recognition ( NER )](https://tinyurl.com/k9yglwc)
-- [Keywords](https://tinyurl.com/kujcu8o)
-- [Intent](https://tinyurl.com/n568bqw)
-- [Emotion](http://blog.paralleldots.com/technology/deep-learning/emotion-detection-using-machine-learning/)
-- [Abuse](https://www.paralleldots.com/text-analysis-apis#abusive)
-- [Multilingual Sentiment Analysis](https://www.paralleldots.com/multilingual-sentiment-analysis) ( The function encodes the input text )
-	- Portuguese ( pt )
-	- Chinese ( zh )
-	- Spanish ( es )
-	- German ( de )
-	- French ( fr )
-	- Dutch ( nl )
-	- Italian (it)
-	- Japanese ( ja )
-	- Indonesian ( id )
-	- Thai ( th )
-	- Danish ( da )
-	- Finish ( fi )
-- [Sentiment Social](https://www.paralleldots.com/text-analysis-apis#sentiment)
-- [Custom Classifier](https://www.paralleldots.com/custom-classifier)
+- Abuse
+- Custom Classifier
+- Emotion ( Supports all [ISO 639-1 Languages via their language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) )
+- Intent
+- Keywords
+- Multilanguage Keywords ( Supports Multiple Languages )
+- Named Entity Extraction/Recognition ( NER )
+- Not Safe For Work ( NSFW Image Classifier )
+- Phrase Extractor
+- Popularity ( Image Classifier )
+- Sentiment Analysis ( Supports all [ISO 639-1 Languages via their language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) )
+- Semantic Similarity
+- Taxonomy
+- Text Parser
 - Usage
 
 Examples
 --------
 
-	>>> from paralleldots import similarity, ner, taxonomy, sentiment, keywords, intent, emotion, multilang, abuse, sentiment_social, custom_classifier
+	>>> import paralleldots
 
-	>>> similarity( "Sachin is the greatest batsman", "Tendulkar is the finest cricketer" )
-	{"actual_score": 0.842932,"normalized_score": 4.931469}
+	>>> api_key   = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+	>>> text      = "Prime Minister Narendra Modi tweeted a link to the speech Human Resource Development Minister Smriti Irani made in the Lok Sabha during the debate on the ongoing JNU row and the suicide of Dalit scholar Rohith Vemula at the Hyderabad Central University."
+	>>> path      = "/home/my_computer/Downloads/image_1.jpg"
+	>>> lang_code = "fr"
+	>>> lang_text = "C'est un environnement très hostile, si vous choisissez de débattre ici, vous serez vicieusement attaqué par l'opposition."
+	>>> category  = { "finance": [ "markets", "economy", "shares" ], "world politics": [ "diplomacy", "UN", "war" ], "india": [ "congress", "india", "bjp" ] }
 
-	>>> sentiment( "Come on, lets play together" )
-	{"probabilities": {"positive": 0.568817, "neutral": 0.400776, "negative": 0.030407}, "sentiment": "positive"}
+	>>> paralleldots.set_api_key( api_key )
+	>>> print( "API Key: %s" % paralleldots.get_api_key() )
 
-	>>> taxonomy( "Narendra Modi is the prime minister of India" )
-	{[{"tag": "terrorism", "confidence_score": 0.531435}, {"tag": "world politics", "confidence_score": 0.391963}, {"tag": "politics", "confidence_score": 0.358955}, {"tag": "religion", "confidence_score": 0.308195}, {"tag": "defense", "confidence_score": 0.26187}, {"tag": "business", "confidence_score": 0.20885}, {"tag": "entrepreneurship", "confidence_score": 0.18349}, {"tag": "health", "confidence_score": 0.171121}, {"tag": "technology", "confidence_score": 0.168591}, {"tag": "law", "confidence_score": 0.156953}, {"tag": "education", "confidence_score": 0.146511}, {"tag": "science", "confidence_score": 0.101002}, {"tag": "crime", "confidence_score": 0.085016}, {"tag": "entertainment", "confidence_score": 0.080634}, {"tag": "environment", "confidence_score": 0.078024}, {"tag": "disaster", "confidence_score": 0.075295}, {"tag": "weather", "confidence_score": 0.06784}, {"tag": "accident", "confidence_score": 0.066831}, {"tag": "sports", "confidence_score": 0.058329}, {"tag": "advertising", "confidence_score": 0.054868}, {"tag": "history", "confidence_score": 0.043581}, {"tag": "mining", "confidence_score": 0.03833}, {"tag": "travel", "confidence_score": 0.025517}, {"tag": "geography", "confidence_score": 0.022372}, {"tag": "nature", "confidence_score": 0.013477}, {"tag": "lifestyle", "confidence_score": 0.006467}, {"tag": "automobile", "confidence_score": 0.001161}, {"tag": "personal care", "confidence_score": 0.000275}]}
+	>>> print( "\nAbuse" )
+	>>> print( paralleldots.abuse( text ) )
+	{'confidence_score': 0.876953, 'sentence_type': 'Non Abusive', 'usage': 'By accessing ParallelDots API or using information generated by ParallelDots API, you are agreeing to be bound by the ParallelDots API Terms of Use: http://www.paralleldots.com/terms-and-conditions'}
 
-	>>> ner( "Narendra Modi is the prime minister of India" )
-	{"entities": [
-		{
-			"category": "name",
-			"name": "Narendra Modi",
-			"confidence_score": 0.951439
-		},
-		{
-			"category": "place",
-			"name": "India",
-			"confidence_score": 0.9263
-		}
-	]}
+	>>> print( "\nCustom Classifier" )
+	>>> print( paralleldots.custom_classifier( text, category ) )
+	{'taxonomy': [{'confidence_score': 0.737156, 'tag': 'india'}, {'confidence_score': 0.580833, 'tag': 'world politics'}, {'confidence_score': 0.259185, 'tag': 'finance'}], 'usage': 'By accessing ParallelDots API or using information generated by ParallelDots API, you are agreeing to be bound by the ParallelDots API Terms of Use: http://www.paralleldots.com/terms-and-conditions'}
 
-	>>> keywords( "Prime Minister Narendra Modi tweeted a link to the speech Human Resource Development Minister Smriti Irani made in the Lok Sabha during the debate on the ongoing JNU row and the suicide of Dalit scholar Rohith Vemula at the Hyderabad Central University." )
-	[{"relevance_score": 4, "keyword": "Prime Minister Narendra Modi"}, {"relevance_score": 1, "keyword": "link"}, {"relevance_score": 3, "keyword": "speech Human Resource"}, {"relevance_score": 1, "keyword": "Smriti"}, {"relevance_score": 1, "keyword": "Lok"}]
+	>>> print( "\nEmotion" )
+	>>> print( paralleldots.emotion( text ) )
+	{'usage': 'By accessing ParallelDots API or using information generated by ParallelDots API, you are agreeing to be bound by the ParallelDots API Terms of Use: http://www.paralleldots.com/terms-and-conditions', 'emotion': 'happy', 'probabilities': {'indifferent': 0.307, 'sad': 0.071, 'angry': 0.05, 'happy': 0.449, 'excited': 0.123}}
 
-	>>> emotion("Did you hear the latest Porcupine Tree song ? It\'s rocking !")
-	{"emotion": "other", "probabilities": {"angry": 0.010629, "other": 0.453988, "sad": 0.028748, "excited": 0.2596, "happy": 0.247035}
+	>>> print( "\nEmotion - Lang: Fr" )
+	>>> print( paralleldots.emotion( lang_text, lang_code ) )
+	{'usage': 'By accessing ParallelDots API or using information generated by ParallelDots API, you are agreeing to be bound by the ParallelDots API Terms of Use: http://www.paralleldots.com/terms-and-conditions', 'emotion': 'sad', 'probabilities': {'indifferent': 0.229, 'sad': 0.364, 'angry': 0.349, 'happy': 0.049, 'excited': 0.009}}
 
-	>>> intent("Finance ministry calls banks to discuss new facility to drain cash")
-	{"probabilities": {"news": 0.946028, "other": 0.015853, "query": 0.000412, "feedback/opinion": 0.014115, "spam": 0.023591}}
+	>>> print( "\nIntent" )
+	>>> print( paralleldots.intent( text ) )
+	{'intent': 'news', 'usage': 'By accessing ParallelDots API or using information generated by ParallelDots API, you are agreeing to be bound by the ParallelDots API Terms of Use: http://www.paralleldots.com/terms-and-conditions', 'probabilities': {'query': 0.004, 'marketing': 0.042, 'spam/junk': 0.003, 'feedback/opinion': 0.024, 'news': 0.927}}
 
-	>>> multilang("Me encanta jugar al baloncesto", "es")	# The text is encoded in the function
-	{"sentiment": "positive", "confidence_score": 1.0}
+	>>> print( "\nKeywords" )
+	>>> print( paralleldots.keywords( text ) )
+	{'keywords': [{'confidence_score': 0.857594, 'keyword': 'Prime Minister Narendra Modi'}, {'confidence_score': 0.913924, 'keyword': 'link'}, {'confidence_score': 0.70655, 'keyword': 'speech Human Resource'}, {'confidence_score': 0.860351, 'keyword': 'Smriti'}, {'confidence_score': 0.945534, 'keyword': 'Lok'}], 'usage': 'By accessing ParallelDots API or using information generated by ParallelDots API, you are agreeing to be bound by the ParallelDots API Terms of Use: http://www.paralleldots.com/terms-and-conditions'}
 
-	>>> abuse("you f**king a$$hole")
-	{"sentence_type": "Abusive", "confidence_score": 0.953125}
+	>>> print( "\nMultilang Keywords - Lang: Fr" )
+	>>> print( paralleldots.multilang_keywords( lang_text, lang_code ) )
+	{'keywords': ['ici', 'hostile', 'attaqué', 'très', 'choisissez', 'si', 'cest', 'vicieusement', 'lopposition', 'débattre'], 'usage': 'By accessing ParallelDots API or using information generated by ParallelDots API, you are agreeing to be bound by the ParallelDots API Terms of Use: http://www.paralleldots.com/terms-and-conditions'}
 
-	>>> sentiment_social("I left my camera at home")
-	{"probabilities": {"positive": 0.040374, "neutral": 0.491032, "negative": 0.468594}}
-	
-	>>> custom_classifier( TEXT, ID )
-	Get your custom classifier id by loggin to your [dashboard](https://user.apis.paralleldots.com/login) and publishing your categories.
-	{ "taxonomy": [ { "tag": tag1, "confidence_score": score1 }, { "tag": tag2, "confidence_score": score2 }, ... ] }
+	>>> print( "\nNER" )
+	>>> print( paralleldots.ner( text ) )
+	{'usage': 'By accessing ParallelDots API or using information generated by ParallelDots API, you are agreeing to be bound by the ParallelDots API Terms of Use: http://www.paralleldots.com/terms-and-conditions', 'entities': [{'name': 'Narendra Modi', 'confidence_score': 0.990574, 'category': 'name'}, {'name': 'Smriti Irani', 'confidence_score': 0.989922, 'category': 'name'}, {'name': 'Rohith Vemula', 'confidence_score': 0.839291, 'category': 'name'}, {'name': 'Lok Sabha', 'confidence_score': 0.80819, 'category': 'group'}, {'name': 'Dalit', 'confidence_score': 0.655424, 'category': 'group'}, {'name': 'Central University', 'confidence_score': 0.708817, 'category': 'group'}, {'name': 'Hyderabad', 'confidence_score': 0.591985, 'category': 'place'}]}
+
+	>>> print( "\nNSFW" )
+	>>> print( paralleldots.nsfw( path ) )
+	{'prob': 0.9995405673980713, 'usage': 'By accessing ParallelDots API or using information generated by ParallelDots API, you are agreeing to be bound by the ParallelDots API Terms of Use: http://www.paralleldots.com/terms-and-conditions', 'output': 'not safe to open at work'}
+
+	>>> print( "\nPhrase Extractor" )
+	>>> print( paralleldots.phrase_extractor( text ) )
+	{'keywords': [{'relevance_score': 4, 'keyword': 'Prime Minister Narendra Modi'}, {'relevance_score': 6, 'keyword': 'Human Resource Development Minister Smriti Irani'}, {'relevance_score': 2, 'keyword': 'Lok Sabha'}, {'relevance_score': 1, 'keyword': 'ongoing'}, {'relevance_score': 2, 'keyword': 'JNU row'}, {'relevance_score': 2, 'keyword': 'Dalit scholar'}, {'relevance_score': 2, 'keyword': 'Rohith Vemula'}, {'relevance_score': 3, 'keyword': 'Hyderabad Central University'}], 'usage': 'By accessing ParallelDots API or using information generated by ParallelDots API, you are agreeing to be bound by the ParallelDots API Terms of Use: http://www.paralleldots.com/terms-and-conditions'}
+
+	>>> print( "\nPopularity" )
+	>>> print( paralleldots.popularity( path ) )
+	{'Popular': '38.1271243095', 'usage': 'By accessing ParallelDots API or using information generated by ParallelDots API, you are agreeing to be bound by the ParallelDots API Terms of Use: http://www.paralleldots.com/terms-and-conditions', 'Not Popular': '61.8728756905'}
+
+	>>> print( "\nSentiment" )
+	>>> print( paralleldots.sentiment( text ) )
+	{'usage': 'By accessing ParallelDots API or using information generated by ParallelDots API, you are agreeing to be bound by the ParallelDots API Terms of Use: http://www.paralleldots.com/terms-and-conditions', 'sentiment': 'neutral', 'probabilities': {'negative': 0.185, 'neutral': 0.549, 'positive': 0.266}}
+
+	>>> print( "\nSentiment - Lang: Fr" )
+	>>> print( paralleldots.sentiment( lang_text, lang_code ) )
+	{'usage': 'By accessing ParallelDots API or using information generated by ParallelDots API, you are agreeing to be bound by the ParallelDots API Terms of Use: http://www.paralleldots.com/terms-and-conditions', 'sentiment': 'negative', 'probabilities': {'negative': 0.689, 'neutral': 0.291, 'positive': 0.02}}
+
+	>>> print( "\nSimilarity" )
+	>>> print( paralleldots.similarity( "I love fish and ice cream!", "fish and ice cream are the best!" ) )
+	{'normalized_score': 4.936506, 'actual_score': 0.848528, 'usage': 'By accessing ParallelDots API or using information generated by ParallelDots API, you are agreeing to be bound by the ParallelDots API Terms of Use: http://www.paralleldots.com/terms-and-conditions'}
+
+	>>> print( "\nTaxonomy" )
+	>>> print( paralleldots.taxonomy( text ) )
+	{'taxonomy': [{'confidence_score': 0.845402, 'tag': 'News and Politics/Law'}, {'confidence_score': 0.878964, 'tag': 'Hobbies & Interests/Workshops and Classes'}, {'confidence_score': 0.7353, 'tag': 'Business and Finance/Industries'}], 'usage': 'By accessing ParallelDots API or using information generated by ParallelDots API, you are agreeing to be bound by the ParallelDots API Terms of Use: http://www.paralleldots.com/terms-and-conditions'}
+
+	>>> print( "\nText Parser" )
+	>>> print( paralleldots.text_parser( text ) )
+	{'usage': 'By accessing ParallelDots API or using information generated by ParallelDots API, you are agreeing to be bound by the ParallelDots API Terms of Use: http://www.paralleldots.com/terms-and-conditions', 'output': [{'Tags': 'noun', 'text': 'Prime', 'Dependency': 'compound'}, {'Tags': 'noun', 'text': 'Minister', 'Dependency': 'compound'}, {'Tags': 'noun', 'text': 'Narendra', 'Dependency': 'compound'}, {'Tags': 'noun', 'text': 'Modi', 'Dependency': 'nominal subject'}, {'Tags': 'verb', 'text': 'tweeted', 'Dependency': 'root'}, {'Tags': 'determiner', 'text': 'a', 'Dependency': 'determiner'}, {'Tags': 'noun', 'text': 'link', 'Dependency': 'direct object'}, {'Tags': 'preposition or conjunction', 'text': 'to', 'Dependency': 'prepositional modifier'}, {'Tags': 'determiner', 'text': 'the', 'Dependency': 'determiner'}, {'Tags': 'noun', 'text': 'speech', 'Dependency': 'compound'}, {'Tags': 'noun', 'text': 'Human', 'Dependency': 'compound'}, {'Tags': 'noun', 'text': 'Resource', 'Dependency': 'compound'}, {'Tags': 'noun', 'text': 'Development', 'Dependency': 'compound'}, {'Tags': 'noun', 'text': 'Minister', 'Dependency': 'compound'}, {'Tags': 'noun', 'text': 'Smriti', 'Dependency': 'compound'}, {'Tags': 'noun', 'text': 'Irani', 'Dependency': 'object of a preposition'}, {'Tags': 'preposition or conjunction', 'text': 'in', 'Dependency': 'prepositional modifier'}, {'Tags': 'determiner', 'text': 'the', 'Dependency': 'determiner'}, {'Tags': 'noun', 'text': 'Lok', 'Dependency': 'compound'}, {'Tags': 'noun', 'text': 'Sabha', 'Dependency': 'object of a preposition'}, {'Tags': 'preposition or conjunction', 'text': 'during', 'Dependency': 'prepositional modifier'}, {'Tags': 'determiner', 'text': 'the', 'Dependency': 'determiner'}, {'Tags': 'noun', 'text': 'debate', 'Dependency': 'object of a preposition'}, {'Tags': 'preposition or conjunction', 'text': 'on', 'Dependency': 'prepositional modifier'}, {'Tags': 'determiner', 'text': 'the', 'Dependency': 'determiner'}, {'Tags': 'adjective', 'text': 'ongoing', 'Dependency': 'adjectival modifier'}, {'Tags': 'noun', 'text': 'JNU', 'Dependency': 'compound'}, {'Tags': 'noun', 'text': 'row', 'Dependency': 'object of a preposition'}, {'Tags': 'conjuction', 'text': 'and', 'Dependency': 'coordinating conjunction'}, {'Tags': 'determiner', 'text': 'the', 'Dependency': 'determiner'}, {'Tags': 'noun', 'text': 'suicide', 'Dependency': 'conjunct'}, {'Tags': 'preposition or conjunction', 'text': 'of', 'Dependency': 'prepositional modifier'}, {'Tags': 'noun', 'text': 'Dalit', 'Dependency': 'compound'}, {'Tags': 'noun', 'text': 'scholar', 'Dependency': 'compound'}, {'Tags': 'noun', 'text': 'Rohith', 'Dependency': 'compound'}, {'Tags': 'noun', 'text': 'Vemula', 'Dependency': 'object of a preposition'}, {'Tags': 'preposition or conjunction', 'text': 'at', 'Dependency': 'prepositional modifier'}, {'Tags': 'determiner', 'text': 'the', 'Dependency': 'determiner'}, {'Tags': 'noun', 'text': 'Hyderabad', 'Dependency': 'compound'}, {'Tags': 'noun', 'text': 'Central', 'Dependency': 'compound'}, {'Tags': 'noun', 'text': 'University', 'Dependency': 'object of a preposition'}]}
 
 	>>> usage()
-	{
-	"emotion": 100,
-	"sentiment": 100,
-	"similarity": 100,
-	"taxonomy": 100,
-	"abuse": 100,
-	"intent": 100,
-	"keywords": 100,
-	"ner": 100,
-	"multilang": 100,
-	"sentiment_social": 100
-	}
+	{'visual_monthly_quota': 954, 'daily_quota': 1000, 'paying': True, 'visual_daily_quota': 100, 'monthly_quota': 0.0}

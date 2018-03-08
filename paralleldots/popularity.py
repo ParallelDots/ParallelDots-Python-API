@@ -1,18 +1,16 @@
 from paralleldots.config import get_api_key
 import requests
-import urllib
 import json
 
-def get_multilang( text, lang_code ):
-	text     = urllib.quote( text )
+def get_popularity( path ):
 	api_key  = get_api_key()
 	if not api_key == None:
-		if type( text ) != str:
+		if type( path ) != str:
 			return { "Error": "Input must be a string." }
-		elif text in [ "", None ]:
+		elif path in [ "", None ]:
 			return { "Error": "Input string cannot be empty." }
-		url = "http://apis.paralleldots.com/v2/multilang"
-		r =  requests.post( url, params={ "api_key": api_key, "text": text, "lang_code": lang_code } )
+		url = "http://apis.paralleldots.com/v3/popularity"
+		r   =  requests.post( url, params= { "api_key": api_key }, files= { "file": open( path, "rb" ).read() } )
 		if r.status_code != 200:
 			return { "Error": "Oops something went wrong ! You can raise an issue at https://github.com/ParallelDots/ParallelDots-Python-API/issues." }
 		r = json.loads( r.text )

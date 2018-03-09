@@ -9,7 +9,7 @@ def get_emotion( text, lang_code= "en" ):
 			return { "Error": "Input must be a string." }
 		elif text in [ "", None ]:
 			return { "Error": "Input string cannot be empty." }
-		url = "http://apis.paralleldots.com/v2/emotion"
+		url = "http://apis.paralleldots.com/v3/emotion"
 		r =  requests.post( url, params= { "api_key": api_key, "text": text, "lang_code": lang_code } )
 		if r.status_code != 200:
 			return { "Error": "Oops something went wrong ! You can raise an issue at https://github.com/ParallelDots/ParallelDots-Python-API/issues." }

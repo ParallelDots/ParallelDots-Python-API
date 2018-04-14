@@ -36,17 +36,19 @@ Languages Supported:
 -------------------
 
 - Portuguese ( pt )
-- Chinese ( zh )
+- Simplified Chinese ( Not available in multilingual keyword generator API ) ( zh )
 - Spanish ( es )
 - German ( de )
 - French ( fr )
 - Dutch ( nl )
-- Italian (it)
+- Italian ( it )
 - Japanese ( ja )
-- Indonesian ( id )
 - Thai ( th )
 - Danish ( da )
-- Finish ( fi )
+- Finnish ( fi )
+- Greek ( el )
+- Russian ( ru )
+- Arabic ( ar )
 
 Supported APIs:
 ---------------

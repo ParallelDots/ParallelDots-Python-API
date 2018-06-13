@@ -137,3 +137,64 @@ def get_usage():
 	response = requests.post( "https://apis.paralleldots.com/usage", params= { "api_key": api_key } ).text
 	response = json.loads( response )
 	return response
+
+def get_batch_intent( data ):
+	api_key  = get_api_key()
+	print api_key
+	response = requests.post( "https://apis.paralleldots.com/v3/intent_batch", params= { "data": json.dumps( data ), "api_key": api_key } ).text
+	response = json.loads( response )
+	return response	
+
+def get_batch_abuse( data ):
+	api_key  = get_api_key()
+	response = requests.post( "https://apis.paralleldots.com/v3/abuse_batch", params= { "data": json.dumps( data ), "api_key": api_key } ).text
+	response = json.loads( response )
+	return response
+
+
+def get_batch_ner( data ):
+	api_key  = get_api_key()
+	response = requests.post( "https://apis.paralleldots.com/v3/ner_batch", params= { "data": json.dumps( data ), "api_key": api_key } ).text
+	response = json.loads( response )
+	return response
+
+
+def get_batch_taxonomy( data ):
+	api_key  = get_api_key()
+	response = requests.post( "https://apis.paralleldots.com/v3/taxonomy_batch", params= { "data": json.dumps( data ), "api_key": api_key } ).text
+	response = json.loads( response )
+	return response	
+
+
+def get_batch_language_detection( data ):
+	api_key  = get_api_key()
+	response = requests.post( "https://apis.paralleldots.com/v3/language_detection_batch", params= { "data": json.dumps( data ), "api_key": api_key } ).text
+	response = json.loads( response )
+	return response		
+
+
+def get_batch_phrase_extractor( data ):
+	api_key  = get_api_key()
+	response = requests.post( "https://apis.paralleldots.com/v3/phrase_extractor_batch", params= { "data": json.dumps( data ), "api_key": api_key } ).text
+	response = json.loads( response )
+	return response
+
+
+def get_batch_keywords( data ):
+	api_key  = get_api_key()
+	response = requests.post( "https://apis.paralleldots.com/v3/keywords_batch", params= { "data": json.dumps( data ), "api_key": api_key } ).text
+	response = json.loads( response )
+	return response
+
+def get_batch_sentiment( data ):
+	api_key  = get_api_key()
+	response = requests.post( "https://apis.paralleldots.com/v3/sentiment_batch", params= { "data": json.dumps( data ), "api_key": api_key } ).text
+	response = json.loads( response )
+	return response
+
+
+def get_batch_emotion( data ):
+	api_key  = get_api_key()
+	response = requests.post( "https://apis.paralleldots.com/v3/emotion_batch", params= { "data": json.dumps( data ), "api_key": api_key } ).text
+	response = json.loads( response )
+	return response

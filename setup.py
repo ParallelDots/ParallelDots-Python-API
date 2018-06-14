@@ -9,12 +9,12 @@ def read( fname ):
 
 setup(
     name="ParallelDots",
-    version="3.2.5",
+    version="3.2.6",
     description="Python Wrapper for ParallelDots APIs",
     long_description=read("DESCRIPTION.rst"),
     url="https://github.com/ParallelDots/ParallelDots-Python-API.git",
-    author="Ahwan Kumar,Meghdeep Ray",
-    author_email="ahwan@paralleldots.com,meghdeepr@paralleldots.com",
+    author="Ahwan Kumar,Manish Kumar",
+    author_email="ahwan@paralleldots.com,manish@paralleldots.com",
     license="MIT",
     classifiers=[
         "Development Status :: 5 - Production/Stable",

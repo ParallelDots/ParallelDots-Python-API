@@ -140,7 +140,6 @@ def get_usage():
 
 def get_batch_intent( data ):
 	api_key  = get_api_key()
-	print api_key
 	response = requests.post( "https://apis.paralleldots.com/v3/intent_batch", params= { "data": json.dumps( data ), "api_key": api_key } ).text
 	response = json.loads( response )
 	return response	

@@ -13,8 +13,8 @@ setup(
     description="Python Wrapper for ParallelDots APIs",
     long_description=read("DESCRIPTION.rst"),
     url="https://github.com/ParallelDots/ParallelDots-Python-API.git",
-    author="Ahwan Kumar,Manish Kumar",
-    author_email="ahwan@paralleldots.com,manish@paralleldots.com",
+    author="Ahwan Kumar,Manish Kumar,Vipin Kumar Gupta",
+    author_email="ahwan@paralleldots.com,manish@paralleldots.com,vipin@paralleldots.com",
     license="MIT",
     classifiers=[
         "Development Status :: 5 - Production/Stable",

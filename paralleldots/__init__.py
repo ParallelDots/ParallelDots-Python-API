@@ -1,4 +1,4 @@
-__all__= [ "config", "usage", "taxonomy", "ner", "similarity", "sentiment", "keywords", "emotion", "intent", "abuse", "custom_classifier", "phrase_extractor", "text_parser", "multilang_keywords", "language_detection", "nsfw", "popularity", "object_recognizer", "facial_emotion", "nsfw_url", "popularity_url", "object_recognizer_url", "facial_emotion_url", "batch_intent", "batch_abuse", "batch_ner", "batch_taxonomy", "batch_keywords", "batch_sentiment", "batch_emotion", "batch_language_detection", "batch_phrase_extractor" ]
+__all__= [ "config", "usage", "taxonomy", "ner", "similarity", "sentiment", "keywords", "emotion", "intent", "abuse", "sarcasm", "target_sentiment","custom_classifier", "phrase_extractor", "text_parser", "multilang_keywords", "language_detection", "nsfw", "popularity", "object_recognizer", "facial_emotion", "nsfw_url", "popularity_url", "object_recognizer_url", "facial_emotion_url", "batch_intent", "batch_abuse", "batch_ner", "batch_taxonomy", "batch_keywords", "batch_sentiment", "batch_emotion", "batch_sarcasm", "batch_language_detection", "batch_target_sentiment", "batch_phrase_extractor" ]
 
 from paralleldots.paralleldots_apis import get_taxonomy              as taxonomy
 from paralleldots.paralleldots_apis import get_ner                   as ner
@@ -8,6 +8,8 @@ from paralleldots.paralleldots_apis import get_keywords              as keywords
 from paralleldots.paralleldots_apis import get_emotion               as emotion
 from paralleldots.paralleldots_apis import get_intent                as intent
 from paralleldots.paralleldots_apis import get_abuse                 as abuse
+from paralleldots.paralleldots_apis import get_sarcasm               as sarcasm
+from paralleldots.paralleldots_apis import get_target_sentiment      as target_sentiment
 from paralleldots.paralleldots_apis import get_custom_classifier     as custom_classifier
 from paralleldots.paralleldots_apis import get_phrase_extractor      as phrase_extractor
 from paralleldots.paralleldots_apis import get_text_parser           as text_parser
@@ -35,6 +37,8 @@ from paralleldots.paralleldots_apis import get_batch_phrase_extractor   as batch
 from paralleldots.paralleldots_apis import get_batch_keywords    		as batch_keywords
 from paralleldots.paralleldots_apis import get_batch_sentiment    		as batch_sentiment
 from paralleldots.paralleldots_apis import get_batch_emotion    		as batch_emotion
+from paralleldots.paralleldots_apis import get_batch_sarcasm    		as batch_sarcasm
+from paralleldots.paralleldots_apis import get_batch_target_sentiment   as batch_target_sentiment
 
 from paralleldots.config            import set_api_key
 from paralleldots.config            import get_api_key

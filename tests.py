@@ -24,8 +24,6 @@ def test():
     print(batch_emotion([ "drugs are fun", "don\'t do drugs, stay in school", "lol you a fag son", "I have a throat infection" ]))
     print(facial_emotion_url("https://i.imgur.com/klb812s.jpg"))
     print(object_recognizer_url("https://i.imgur.com/klb812s.jpg"))
-    print(object_recognizer("test.jpg"))
-    print(facial_emotion("test.jpg"))
     print(sarcasm("The movie that i watched last night is so funny that i get rolled out with laughter"))
     print(batch_sarcasm(["The movie that i watched last night is so funny that i get rolled out with laughter","I want to spend my life alone"]))
 

@@ -15,7 +15,6 @@ def test():
     print(intent("Finance ministry calls banks to discuss new facility to drain cash"))
     print(abuse("you f**king a$$hole"))
     print(custom_classifier("Narendra Modi is the prime minister of India",category))
-    print(multilang_keywords("C'est un environnement très hostile, si vous choisissez de débattre ici, vous serez vicieusement attaqué par l'opposition","fr"))
     print(batch_intent([ "drugs are fun", "don\'t do drugs, stay in school", "lol you a fag son", "I have a throat infection" ]))
     print(batch_abuse([ "drugs are fun", "dont do drugs, stay in school"]))
     print(batch_sentiment([ "drugs are fun", "don\'t do drugs, stay in school", "lol you a fag son", "I have a throat infection" ]))

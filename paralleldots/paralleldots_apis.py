@@ -8,9 +8,9 @@ def get_sentiment( text, lang_code= "en" ):
 	response = json.loads( response )
 	return response
 
-def get_ner( text ):
+def get_ner( text ,lang_code="en"):
 	api_key  = get_api_key()
-	response = requests.post( "https://apis.paralleldots.com/v4/ner", data= { "api_key": api_key, "text": text } ).text
+	response = requests.post( "https://apis.paralleldots.com/v4/ner", data= { "api_key": api_key, "text": text, "lang_code": lang_code} ).text
 	response = json.loads( response )
 	return response
 

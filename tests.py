@@ -7,7 +7,7 @@ def test():
     category  = { "finance": [ "markets", "economy", "shares" ], "world politics": [ "diplomacy", "UN", "war" ], "india": [ "congress", "india", "bjp" ] }
     print(similarity( "Sachin is the greatest batsman", "Tendulkar is the finest cricketer" ))
     print(sentiment( "Come on, lets play together" ))
-    print(ner( "Narendra Modi is the prime minister of India" ))
+    print(ner( "Narendra Modi is the prime minister of India","en" ))
     print(taxonomy("Michael Jordan of the Chicago Bulls is getting a 10-hour Netflix documentary in 2019"))
     print(keywords( "Prime Minister Narendra Modi tweeted a link to the speech Human Resource Development Minister Smriti Irani made in the Lok Sabha during the debate on the ongoing JNU row and the suicide of Dalit scholar Rohith Vemula at the Hyderabad Central University." ))
     print(phrase_extractor( "Prime Minister Narendra Modi tweeted a link to the speech Human Resource Development Minister Smriti Irani made in the Lok Sabha during the debate on the ongoing JNU row and the suicide of Dalit scholar Rohith Vemula at the Hyderabad Central University." ))

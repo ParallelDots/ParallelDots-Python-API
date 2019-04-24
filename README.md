@@ -103,6 +103,7 @@ Examples
 
 	>>> print( "\nEmotion" )
 	>>> paralleldots.emotion( text )
+
 	>>> print( "\nBatch Emotion" )
 	>>> paralleldots.batch_emotion( data )
 	
@@ -111,8 +112,12 @@ Examples
 	>>> paralleldots.emotion( lang_text, lang_code )
 	
 
+	>>> print( "\nSarcasm - Lang: Fr" )
+	>>> paralleldots.sarcasm( lang_text,lang_code )
+
+
 	>>> print( "\nSarcasm" )
-	>>> paralleldots.sarcasm( text )
+	>>> paralleldots.sarcasm( text)
 	
 
 	>>> print( "\nBatch Sarcasm" )
@@ -145,23 +150,19 @@ Examples
 	>>> paralleldots.batch_language_detection( data )
 	
 
-	>>> print( "\nMultilang Keywords - Lang: Fr". )
+	>>> print( "\nMultilang Keywords - Lang: fr". )
 	>>> paralleldots.multilang_keywords( lang_text, lang_code )
 	
 	>>> print( "\nNER" )
 	>>> paralleldots.ner( text )
 
+	>>> print( "\nNER - Lang: es" )
+	>>> paralleldots.ner( "Lionel Andrés Messi vuelve a ser el gran protagonista en las portadas de la prensa deportiva internacional al día siguiente de un partido de Champions.","es" )
+
 
 	>>> print( "\nBatch NER" )
 	>>> paralleldots.batch_ner( data ) 
 	
-
-	>>> print( "\nNSFW" )
-	>>> paralleldots.nsfw( path ) 
-	
-
-	>>> print( "\nNSFW: URL Method" )
-	>>> paralleldots.nsfw_url( url ) 
 
 
 	>>> print( "\nObject Recognizer" )
@@ -178,13 +179,6 @@ Examples
 
 	>>> print( "\nBatch Phrase Extractor" )
 	>>> paralleldots.batch_phrase_extractor( data )
-	
-
-	>>> print( "\nPopularity" )
-	>>> paralleldots.popularity( path )
-
-	>>> print( "\nPopularity: URL Method" )
-	>>> paralleldots.popularity_url( url )
 
 
 	>>> print( "\nSentiment" )
@@ -209,8 +203,6 @@ Examples
 
 	>>> print( "\nBatch Taxonomy" )
 	>>> paralleldots.batch_taxonomy( data )
-	
-	>>> print( "\nText Parser" )
-	>>> paralleldots.text_parser( text )
+
 	
 	>>> paralleldots.usage()

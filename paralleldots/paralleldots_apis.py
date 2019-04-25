@@ -163,9 +163,9 @@ def get_batch_abuse( data ):
 	return response
 
 
-def get_batch_ner( data ):
+def get_batch_ner( data,lang_code="en" ):
 	api_key  = get_api_key()
-	response = requests.post( "https://apis.paralleldots.com/v4/ner_batch", data= { "text": json.dumps( data ), "api_key": api_key } ).text
+	response = requests.post( "https://apis.paralleldots.com/v4/ner_batch", data= { "text": json.dumps( data ), "api_key": api_key, "lang_code":lang_code } ).text
 	response = json.loads( response )
 	return response
 
@@ -197,22 +197,22 @@ def get_batch_keywords( data ):
 	response = json.loads( response )
 	return response
 
-def get_batch_sentiment( data ):
+def get_batch_sentiment( data,lang_code="en" ):
 	api_key  = get_api_key()
-	response = requests.post( "https://apis.paralleldots.com/v4/sentiment_batch", data= { "text": json.dumps( data ), "api_key": api_key } ).text
+	response = requests.post( "https://apis.paralleldots.com/v4/sentiment_batch", data= { "text": json.dumps( data ), "api_key": api_key, "lang_code":lang_code} ).text
 	response = json.loads( response )
 	return response
 
 
-def get_batch_emotion( data ):
+def get_batch_emotion( data, lang_code="en"):
 	api_key  = get_api_key()
-	response = requests.post( "https://apis.paralleldots.com/v4/emotion_batch", data= { "text": json.dumps( data ), "api_key": api_key } ).text
+	response = requests.post( "https://apis.paralleldots.com/v4/emotion_batch", data= { "text": json.dumps( data ), "api_key": api_key, "lang_code":lang_code} ).text
 	response = json.loads( response )
 	return response
 
-def get_batch_sarcasm( data ):
+def get_batch_sarcasm( data, lang_code="en"):
 	api_key  = get_api_key()
-	response = requests.post( "https://apis.paralleldots.com/v4/sarcasm_batch", data= { "text": json.dumps( data ), "api_key": api_key } ).text
+	response = requests.post( "https://apis.paralleldots.com/v4/sarcasm_batch", data= { "text": json.dumps( data ), "api_key": api_key, "lang_code":lang_code} ).text
 	response = json.loads( response )
 	return response
 

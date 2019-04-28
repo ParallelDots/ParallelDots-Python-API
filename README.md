@@ -78,13 +78,13 @@ Examples
 	>>> import paralleldots
 
 	>>> api_key   = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-	>>> text      = "Prime Minister Narendra Modi tweeted a link to the speech Human Resource Development Minister Smriti Irani made in the Lok Sabha during the bate on the ongoing JNU row and the suicide of Dalit scholar Rohith Vemula at the Hyderabad Central University."
-	>>> path      = "/home/my_computer/Downloads/image_1.jpg"
+	>>> text      = "Chipotle in the north of Chicago is a nice outlet. I went to this place for their famous burritos but fell in love with their healthy avocado salads. Our server Jessica was very helpful. Will pop in again soon!"
+	>>> path      = "/path/to/image.jpg"
 	>>> lang_code = "fr"
 	>>> lang_text = "C'est un environnement très hostile, si vous choisissez de débattre ici, vous serez vicieusement attaqué par l'opposition."
 	>>> category  = { "finance": [ "markets", "economy", "shares" ], "world politics": [ "diplomacy", "UN", "war" ], "india": [ "congress", "india", "bjp" ] }
 	>>> url       = "http://i.imgur.com/klb812s.jpg"
-	>>> data      =  [ "drugs are fun", "don\'t do drugs, stay in school", "lol you a fag son", "I have a throat infection" ]
+	>>> data      =  [ "I like walking in the park", "Don't repeat the same thing over and over!", "This new Liverpool team is not bad", "I have a throat infection" ]
 
 
 	>>> paralleldots.set_api_key( api_key )

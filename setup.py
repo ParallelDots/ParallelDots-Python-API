@@ -9,12 +9,12 @@ def read( fname ):
 
 setup(
     name="ParallelDots",
-    version="3.2.12",
+    version="3.2.13",
     description="Python Wrapper for ParallelDots APIs",
     long_description=read("DESCRIPTION.rst"),
     url="https://github.com/ParallelDots/ParallelDots-Python-API.git",
-    author="Ahwan Kumar,Manish Kumar,Vipin Kumar Gupta",
-    author_email="ahwan@paralleldots.com,manish@paralleldots.com,vipin@paralleldots.com",
+    author="Ahwan Kumar,Manish Kumar,Vipin Kumar Gupta,Akash Sharma",
+    author_email="ahwan@paralleldots.com,manish@paralleldots.com,vipin@paralleldots.com,akash@paralleldots.com",
     license="MIT",
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -39,7 +39,7 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
 
     ],
-    keywords="paralleldots sentiment taxonomy ner semantic similarity deeplearning intent emotion abuse nsfw image visual api phrase text parser popularity",
+    keywords="paralleldots sentiment taxonomy ner semantic similarity deeplearning intent emotion abuse nsfw image visual api phrase text parser popularity target sentiment",
     packages=find_packages( exclude= [ "contrib", "docs", "tests*" ] ),
     setup_requires=[
         "requests"

@@ -67,6 +67,7 @@ Supported APIs:
 - Popularity ( Image Classifier )
 - Object Recognizer
 - Sentiment Analysis
+- Target Sentiment Analysis
 - Semantic Similarity
 - Taxonomy
 - Text Parser
@@ -81,8 +82,9 @@ Examples
 	>>> text      = "Chipotle in the north of Chicago is a nice outlet. I went to this place for their famous burritos but fell in love with their healthy avocado salads. Our server Jessica was very helpful. Will pop in again soon!"
 	>>> path      = "/path/to/image.jpg"
 	>>> lang_code = "fr"
+	>>> aspect    = "food"
 	>>> lang_text = "C'est un environnement très hostile, si vous choisissez de débattre ici, vous serez vicieusement attaqué par l'opposition."
-	>>> category  = { "finance": [ "markets", "economy", "shares" ], "world politics": [ "diplomacy", "UN", "war" ], "india": [ "congress", "india", "bjp" ] }
+	>>> category  = [ "travel","food","shopping", "market" ]
 	>>> url       = "http://i.imgur.com/klb812s.jpg"
 	>>> data      =  [ "I like walking in the park", "Don't repeat the same thing over and over!", "This new Liverpool team is not bad", "I have a throat infection" ]
 
@@ -184,6 +186,8 @@ Examples
 	>>> print( "\nSentiment" )
 	>>> paralleldots.sentiment( text )
 	
+	>>> print( "\nTarget Sentiment" )
+	>>> paralleldots.target_sentiment( text, aspect )
 
 	>>> print( "\nBatch Sentiment" )
 	>>> paralleldots.batch_sentiment( data )

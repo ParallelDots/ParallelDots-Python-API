@@ -4,9 +4,10 @@ from paralleldots import similarity, ner, sentiment, keywords, intent, emotion, 
 
 def test():
     set_api_key("Put your Api key here")
-    category  = { "finance": [ "markets", "economy", "shares" ], "world politics": [ "diplomacy", "UN", "war" ], "india": [ "congress", "india", "bjp" ] }
+    category  = ["finance","world politics"]
     print(similarity( "Sachin is the greatest batsman", "Tendulkar is the finest cricketer" ))
     print(sentiment( "Come on, lets play together" ))
+    print(target_sentiment( "Quantity was good. price was alright. delivery was very slow.", "price"))
     print(ner( "Narendra Modi is the prime minister of India","en" ))
     print(taxonomy("Michael Jordan of the Chicago Bulls is getting a 10-hour Netflix documentary in 2019"))
     print(keywords( "Prime Minister Narendra Modi tweeted a link to the speech Human Resource Development Minister Smriti Irani made in the Lok Sabha during the debate on the ongoing JNU row and the suicide of Dalit scholar Rohith Vemula at the Hyderabad Central University." ))
@@ -14,7 +15,7 @@ def test():
     print(emotion("Did you hear the latest Porcupine Tree song ? It's rocking !"))
     print(intent("Finance ministry calls banks to discuss new facility to drain cash"))
     print(abuse("you f**king a$$hole"))
-    print(custom_classifier("Narendra Modi is the prime minister of India",category))
+    print(custom_classifier("Joe Biden is the president of USA",category))
     print(batch_intent([ "drugs are fun", "don\'t do drugs, stay in school", "lol you a fag son", "I have a throat infection" ]))
     print(batch_abuse([ "drugs are fun", "dont do drugs, stay in school"]))
     print(batch_sentiment([ "drugs are fun", "don\'t do drugs, stay in school", "lol you a fag son", "I have a throat infection" ]))

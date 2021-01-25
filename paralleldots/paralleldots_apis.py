@@ -26,9 +26,9 @@ def get_sarcasm( text ,  lang_code= "en" ):
 	response = json.loads( response )
 	return response
 
-def get_target_sentiment( text ,entity):
+def get_target_sentiment( text ,aspect):
 	api_key  = get_api_key()
-	response = requests.post( "https://apis.paralleldots.com/v4/target/sentiment", data= { "api_key": api_key, "text": text, "entity": entity} ).text
+	response = requests.post( "https://apis.paralleldots.com/v4/target_sentiment", data= { "api_key": api_key, "text": text, "aspect": aspect} ).text
 	response = json.loads( response )
 	return response
 
@@ -64,7 +64,7 @@ def get_similarity( text_1, text_2 ):
 
 def get_custom_classifier( text, category ):
 	api_key  = get_api_key()
-	if type( category ) == dict:
+	if type( category ) == list:
 		category = json.dumps( category )
 	response = requests.post( "https://apis.paralleldots.com/v4/custom_classifier", data= { "api_key": api_key, "text": text, "category": category } ).text
 	response = json.loads( response )
